@@ -1,12 +1,7 @@
 class Questions {
-    // String questions[] = {"Question 1", "Question 2", "Question 3", "Question 4", "Question 5"};
     String question = null;
-    
     int answer = Integer.MIN_VALUE;
     String options[];
-    // String options[] = {"(A) Option1 (B) Option2 \n (C) Option3 (D) Option4", "(A) Option1 (B) Option2 \n (C) Option3 (D) Option4", "", "", ""};
-    // int answerKey[][] = {{"Option 11", "Option 12", "Option 13", "Option 14"}, {"Option 21", "Option 22", "Option 23", "Option 24"}, {"Option 31", "Option 32", "Option 33", "Option 24"}, {}, {}};
-    // int currentQuestionNumber = null;
 
     public void createQuestion(String question) {
         this.question = question;

@@ -84,6 +84,5 @@ public class Main {
         }
         System.out.println("You scored: "+ score);
         System.out.println("Quiz End!");
-
     }
 }
