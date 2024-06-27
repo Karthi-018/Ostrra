@@ -1,2 +1,0 @@
-# Ostrra
-Demos
