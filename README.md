@@ -1,2 +1,2 @@
 **OSTTRA Training Classroom Files** \
-<span style="font-size:0.5em;">*By Ankit*</span>
+<span style="font-size:0.2em;">*By Ankit*</span>
