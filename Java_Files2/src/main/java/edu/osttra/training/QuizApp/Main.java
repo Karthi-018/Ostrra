@@ -71,10 +71,11 @@ public class Main {
                 boolean leftQuestion = true;
                 for(int i = 0; i < questionsPickedSoFar.length; i++) {
                     if(questionsPickedSoFar[randomQuestionNum] > 0 && questionsPickedSoFar[randomQuestionNum] <= 5) {
-                        leftQuestion = true;
+//                        leftQuestion = true;
                         break;
                     }
                     if(i == questionsPickedSoFar.length-1) {
+                        System.out.println("Break statement");
                         leftQuestion = false;
                     }
                 }

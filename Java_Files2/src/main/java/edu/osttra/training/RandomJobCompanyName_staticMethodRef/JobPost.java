@@ -1,4 +1,4 @@
-package edu.osttra.training.RandomJobCompanyName.RandomJob;
+package edu.osttra.training.RandomJobCompanyName_staticMethodRef;
 
 public class JobPost {
     long id;

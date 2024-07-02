@@ -1,4 +1,4 @@
-package edu.osttra.training.RandomJobCompanyName.RandomJob;
+package edu.osttra.training.RandomJobCompanyName_constructorMethodRef;
 
 public class FilteredJobs {
     static String jobName;
@@ -39,12 +39,12 @@ public class FilteredJobs {
 //        this.companyName = companyName;
 //    }
 
-//    @Override
-//    public String toString() {
-//        return "JobName: "+jobName+", JobLocation: "+jobLocation+", CompanyName: "+companyName;
-//    }
-
-    static String print(JobPost o) {
-        return "JobName: "+o.jobName+", JobLocation: "+o.jobLocation+", CompanyName: "+o.companyName;
+    @Override
+    public String toString() {
+        return "JobName: "+jobName+", JobLocation: "+jobLocation+", CompanyName: "+companyName;
     }
+
+//    static String print(JobPost o) {
+//        return "JobName: "+o.jobName+", JobLocation: "+o.jobLocation+", CompanyName: "+o.companyName;
+//    }
 }
