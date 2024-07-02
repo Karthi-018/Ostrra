@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.sound.midi.Soundbank;
 
 public class JobSearch {
     public static void main(String[] args) {
@@ -17,10 +16,11 @@ public class JobSearch {
             locations.add("location"+i);
         }
 
-        jobs.forEach(s-> System.out.print(s+" "));
-        locations.forEach(s-> System.out.print(s+" "));
-        System.out.println(jobs.size());
-        System.out.println(locations.size());
+        List<String> companies = new ArrayList<>();
+        for(int i = 1; i<=10; i++){
+            companies.add("company"+i);
+        }
+
         List<jobPost> jobPosts = new ArrayList<>();
         Random r = new Random();
         for(int i = 1; i<=10000; i++){
@@ -28,7 +28,8 @@ public class JobSearch {
             long id = System.currentTimeMillis();
             String job = jobs.get(r.nextInt(jobs.size()));
             String location = locations.get(r.nextInt(locations.size()));
-            jobPosts.add(new jobPost(id, job, location));
+            String company = companies.get(r.nextInt(companies.size()));
+            jobPosts.add(new jobPost(id, job, location, company));
         }
 
         Scanner sc = new Scanner(System.in);
@@ -40,8 +41,14 @@ public class JobSearch {
         String searchJob = sc.next();
         
 
-        jobPosts.stream().filter(job -> (job.getLocation().equals(searchCity) && job.getName().equals(searchJob))).findFirst().ifPresentOrElse(job -> System.out.println(job.getId()),()->System.out.println("not found"));;
+        jobPosts.stream().filter(job -> {return job.getLocation()
+            .equals(searchCity) && job.getName().equals(searchJob);})
+            .findAny().ifPresentOrElse(job -> System.out.println(job.getId()),()->System.out.println("not found"));
 
+        List<companyName> companyNames= jobPosts.stream()
+        .filter(job -> {return job.getLocation().equals(searchCity) && job.getName().equals(searchJob);})
+        .map(companyName::new).toList();
+        companyNames.forEach(System.out::print);
     }
     
 }
@@ -50,11 +57,13 @@ class jobPost{
     long id;
     String name;
     String location;
+    String companyName;
 
-    jobPost(long id, String name, String location){
+    jobPost(long id, String name, String location, String companyName){
         this.id = id;
         this.name = name;
         this.location = location;
+        this.companyName = companyName;
     }
 
     public long getId() {
@@ -79,5 +88,54 @@ class jobPost{
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getCompanyName() {
+        return companyName + " ";
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+}
+
+class companyName {
+    long id;
+    String job;
+    String company;
+
+    companyName(jobPost j){
+        this.id = j.getId();
+        this.job = j.getName();
+        this.company = j.getCompanyName();
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    @Override
+    public String toString() {
+        return "Company name - " + getCompany() + " job name - " + getJob() + " id - " + getId() + " \n";
     }
 }
