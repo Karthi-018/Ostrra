@@ -1,0 +1,4 @@
+#Wed Jul 03 12:49:31 IST 2024
+connectionString=mongodb+srv\://vikramsaha2002\:root@learncluster.2bckglu.mongodb.net/?appName\=LearnCluster
+colName=myCol
+dbName=learnDB
