@@ -1,0 +1,5 @@
+#
+#Thu Jul 04 11:25:17 IST 2024
+pass=root
+user=root
+url=jdbc\:mysql\://localhost\:3306/student
