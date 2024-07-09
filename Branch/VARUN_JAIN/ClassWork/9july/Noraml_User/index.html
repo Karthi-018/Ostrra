@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div id="form-container" style="display: block; margin: 0% auto; width: 30%;">
+        <form onsubmit="event.preventDefault(); check();">
+            <p style="color: red; display: none;" id="error-msg">Invalid Login</p>
+            <h2>Login</h2>
+            <p>
+                <label>Username</label>
+                <input type="text" id="user" required />
+            </p>
+            <p>
+                <label>Password</label>
+                <input type="password" id="password" required />
+            </p>
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+    <h1 id="welcome-msg"></h1>
+    <script src="script.js"></script>
+</body>
+</html>
