@@ -26,10 +26,5 @@ public class Main {
         ans = jobObj.stream().map(FilteredJobs::print).toList();
         ans.forEach(System.out::println);
 
-
-//        Constructor Method Reference
-//        result = jobObj.stream().map(FilteredJobs::new).toList();
-//        result.forEach(System.out::println);
-
     }
 }
