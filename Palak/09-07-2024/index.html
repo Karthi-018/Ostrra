@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            My Document
+        </title>
+    </head>
+    <body>
+        <h1>Hi Hello</h1>
+        <div id="uname">
+              
+        </div>
+
+        <!-- <p>
+            <label>Enter your name</label>
+            <input type="text" id="tname">
+            <button onclick="printname()">Submit</button>
+        </p> -->
+        <script>
+            let name = prompt("Enter your username");
+
+           let pwd= prompt("enter your password");
+
+if( name =="admin" && pwd=="root"){
+document.getElementById('uname').innerHTML="<h1 style ='color:green'>Welcome "+name+"</h1>";
+
+}else{
+document.getElementById('uname').innerHTML="<h1 style ='color:red'>Invalid input</h1>";
+}
+
+
+// function printname(){
+//     let tname= document.getElementById("tname").value;
+//     alert("welcome"+tname);
+// }   
+        </script>
+    </body>
+
+</html>

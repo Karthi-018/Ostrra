@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>
+            Login Page
+        </title>
+    </head>
+    <body>
+        <div>
+            <div id="uname"></div>
+            <div id="form">
+                <h1>
+                    Login
+                </h1>
+                <p><label>Enter your name</label>
+                    <input type="text" id="name"></p>
+                <p><label>Enter you password</label>
+                    <input type="password" id="password">
+                </p>
+                <button onclick="printname()">Submit</button>
+                <button type="reset">Reset</button>
+
+            </div>
+            </div>
+
+            <script>
+                function printname(){
+                let name = document.getElementById("name").value;
+    
+               let pwd= document.getElementById("password").value;
+    
+    if(name =="admin" && pwd=="root"){
+    document.getElementById('uname').innerHTML="<h1 style ='color:green'>Welcome</h1>";
+    document.getElementById("form").style.display="none";
+    
+    }else{
+    document.getElementById('uname').innerHTML="<h1 style ='color:red'>Invalid input</h1>";
+
+    }
+}
+ 
+    </script>
+
+      
+            
+            
+            
+
+      
+    </body>
