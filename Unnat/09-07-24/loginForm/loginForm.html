@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div id="form-container">
+        <form onsubmit="event.preventDefault(); login();">
+            <p style="color: red; display: none;" id="error-msg">Invalid Login</p>
+            <h2>Login</h2>
+            <p>
+                <label>Username</label>
+                <input type="text" id="user" required />
+            </p>
+            <p>
+                <label>Password</label>
+                <input type="password" id="password" required />
+            </p>
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+    <h1 id="welcome-msg"></h1>
+    <script>
+
+        function login() {
+            let user=document.getElementById("user").value;
+            let password=document.getElementById("password").value;
+
+            if(user=="admin" && password=="admin123") {
+                document.getElementById("form-container").style.display="none";
+                document.getElementById("welcome-msg").innerHTML="Welcome "+user;
+            } else {
+                document.getElementById("error-msg").style.display="block";
+            }
+        }        
+    </script>
+</body>
+</html>
